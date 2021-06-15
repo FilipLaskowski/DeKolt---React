@@ -1,0 +1,114 @@
+/*
+=============== 
+Mixins
+===============
+*/
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@mixin nav-desktop {
+  @media screen and (min-width: 900px) {
+    @content;
+  }
+}
+
+/*
+=============== 
+Color Variables
+===============
+*/
+
+// dark shades of primary color
+$primary-1: #350000;
+$primary-2: #590000;
+$primary-3: #7d0000;
+$primary-4: #a00000;
+// primary color
+$primary-5: #b20000;
+// light shades of primary color
+$primary-6: #c13333;
+$primary-7: #d16666;
+$primary-8: #e09999;
+$primary-9: #f0cccc;
+// background colors
+$bg: #222;
+$menu-bg-scroll: #222;
+$menu-bg-main: transparent;
+// text-colors
+$text-color: #ffffff;
+
+/*
+=============== 
+Global Variables
+===============
+*/
+
+$transition: all 0.3s linear;
+$spacing: 0.1rem;
+$radius: 0.25rem;
+$light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+$dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+$bg-shadow: rgba(0, 0, 0, 0.5);
+$preloader-shadow: rgba(0, 0, 0, 0.9);
+$menu-shadow: rgba(0, 0, 0, 0.7);
+$max-width: 1170px;
+$fixed-width: 620px;
+
+/*
+=============== 
+Imports
+===============
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+@import "./styles/_preloader", "./styles/main", "./styles/nav";
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Play", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url("./img/concerts_bg2.jpg");
+}
+a {
+  color: initial;
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+  font-family: "Special Elite", cursive;
+}

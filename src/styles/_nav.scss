@@ -1,0 +1,105 @@
+/*
+=============== 
+Mobile 
+===============
+*/
+nav {
+  background: $menu-bg-main;
+  position: fixed;
+  width: 100%;
+  .nav-center {
+    .nav-header {
+      @include flex-between;
+      padding: 1rem;
+      .nav-toggle {
+        font-size: 2.5rem;
+        color: $text-color;
+        background: transparent;
+        border-color: transparent;
+        cursor: pointer;
+        &:hover {
+          color: $primary-7;
+        }
+      }
+      .logo {
+        height: 60px;
+      }
+    }
+  }
+
+  .links-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $menu-shadow;
+    height: 0;
+    overflow: hidden;
+    transition: all ease-out 1s;
+    @include flex-column;
+    .links-exit {
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      color: $text-color;
+      font-size: 3rem;
+      cursor: pointer;
+      &:hover {
+        color: $primary-5;
+      }
+    }
+    .links {
+      padding: 0;
+      a {
+        color: $text-color;
+        font-size: 4rem;
+        text-transform: capitalize;
+        letter-spacing: 0.1rem;
+        display: block;
+        text-align: center;
+        &:hover {
+          color: $primary-5;
+        }
+      }
+    }
+  }
+}
+/*
+=============== 
+Desktop
+===============
+*/
+
+@include nav-desktop {
+  .nav-center {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    .nav-header {
+      padding: 0;
+      .nav-toggle {
+        display: none;
+      }
+    }
+    .links-container {
+      background: transparent;
+      position: initial;
+      height: auto !important;
+      align-items: flex-end;
+      .links-exit {
+        display: none;
+      }
+      .links {
+        display: flex;
+        a {
+          font-size: 2rem;
+          padding: 0;
+          margin: 0 0.5rem;
+        }
+      }
+    }
+  }
+}
