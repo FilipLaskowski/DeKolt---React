@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Preloader from "./Preloader";
 import Navbar from "./Navbar";
-import Main from "./Main";
+import Primary from "./Primary";
 import Concerts from "./Concerts";
 
 function App() {
@@ -19,8 +19,10 @@ function App() {
       ) : (
         <>
           <Navbar />
-          <Main />
-          <Concerts />
+          <Primary />
+          <main>
+            <Concerts />
+          </main>
         </>
       )}
     </>
