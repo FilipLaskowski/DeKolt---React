@@ -14,7 +14,7 @@ function Concerts() {
   return (
     <section className="concerts">
       <header className="section-header">
-        <h1>Koncerty</h1>
+        <h1>koncerty</h1>
       </header>
       <div className="concerts-container">
         {isEvent ? (

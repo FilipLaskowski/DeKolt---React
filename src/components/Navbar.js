@@ -6,6 +6,7 @@ import logo from "../logo.png";
 function Navbar() {
   const [showLinks, setShowLinks] = useState(false);
   const linksContainerRef = useRef(null);
+  const [isNavbarTop, setIsNavbarTop] = useState(true);
   useEffect(() => {
     if (showLinks) {
       linksContainerRef.current.style.height = "100vh";
@@ -13,8 +14,18 @@ function Navbar() {
       linksContainerRef.current.style.height = "0px";
     }
   }, [showLinks]);
+  const setScroll = () => {
+    if (window.scrollY > 300) {
+      setIsNavbarTop(false);
+    } else {
+      setIsNavbarTop(true);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", setScroll);
+  }, []);
   return (
-    <nav>
+    <nav className={`${isNavbarTop ? "" : "navbar-black"}`}>
       <div className="nav-center">
         <div className="nav-header">
           <img className="logo" src={logo} alt="DeKolt logo" />

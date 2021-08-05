@@ -1,0 +1,41 @@
+/*
+=============== 
+Mobile
+===============
+*/
+
+.about {
+  padding: 2rem;
+  .about-container {
+    @include flex-column;
+    .about-side {
+      @include flex-column;
+      img {
+        border: 10px double white;
+        width: 80%;
+        transform: rotate(5deg);
+        margin-bottom: 40px;
+      }
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+/*
+=============== 
+Desktop
+===============
+*/
+
+@include nav-desktop {
+  .about {
+    .about-container {
+      flex-direction: row;
+      .about-side {
+        width: 50%;
+      }
+    }
+  }
+}

@@ -4,9 +4,9 @@ function Events({ concertsList }) {
   return (
     <>
       {concertsList.map((concert) => {
-        const { date, hour, city, place } = concert;
+        const { date, hour, city, place, id } = concert;
         return (
-          <article>
+          <article key={id}>
             <div className="concert-time">
               <h3>{date}</h3>
               <h5>{hour}</h5>

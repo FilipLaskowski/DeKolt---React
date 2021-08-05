@@ -1,0 +1,58 @@
+/*
+=============== 
+Mobile 
+===============
+*/
+
+.gallery {
+  @include flex-column;
+  .gallery-container {
+    padding: 2rem;
+    max-width: 1400px;
+    .gallery-shortcut {
+      width: 100%;
+      position: relative;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        color: $primary-5;
+      }
+      img {
+        width: 100%;
+      }
+      h3 {
+        text-align: center;
+        width: 100%;
+      }
+      h5 {
+        text-align: center;
+        width: 100%;
+      }
+      .darker {
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 30%;
+        @include flex-column;
+      }
+    }
+  }
+}
+
+/*
+=============== 
+Desktop
+===============
+*/
+
+@include desktop {
+  .gallery-container {
+    @include flex-between;
+    .gallery-shortcut {
+      width: 90%;
+    }
+  }
+}

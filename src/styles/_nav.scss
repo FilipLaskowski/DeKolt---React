@@ -3,10 +3,16 @@
 Mobile 
 ===============
 */
+.navbar-black {
+  background: black;
+  border-bottom: 2px solid $primary-5;
+  transition: linear background-color 1s;
+}
 nav {
   background: $menu-bg-main;
   position: fixed;
   width: 100%;
+  z-index: 1000;
   .nav-center {
     .nav-header {
       @include flex-between;
@@ -57,6 +63,7 @@ nav {
         letter-spacing: 0.1rem;
         display: block;
         text-align: center;
+        font-family: "Special Elite", cursive;
         &:hover {
           color: $primary-5;
         }
@@ -77,7 +84,7 @@ Desktop
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0 1rem;
     .nav-header {
       padding: 0;
       .nav-toggle {

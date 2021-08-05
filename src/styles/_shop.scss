@@ -1,0 +1,36 @@
+/*
+=============== 
+Mobile 
+===============
+*/
+.shop {
+  @include flex-column;
+  .shop-container {
+    @include flex-column;
+    width: 90%;
+
+    .shop-layer {
+      width: 100%;
+      position: relative;
+      border: 10px double white;
+      .shop-layer-bg {
+        width: 100%;
+      }
+      .shop-logo {
+        position: absolute;
+        width: 40%;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+      }
+    }
+
+    .shop-link {
+      p {
+        font-size: 3rem;
+        text-align: center;
+      }
+      @include flex-column;
+    }
+  }
+}

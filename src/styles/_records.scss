@@ -1,0 +1,113 @@
+.albums-container {
+  @include flex-column;
+  .albumEl {
+    max-width: 1400px;
+    width: 90%;
+    header {
+      display: flex;
+      justify-content: flex-start;
+      border-bottom: 2px solid $primary-3;
+      img {
+        width: 20%;
+        width: 150px;
+      }
+      .album-info {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        h3 {
+          font-size: 2rem;
+          text-transform: capitalize;
+        }
+        h5 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .album-content {
+      article {
+        padding: 1rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+        @include flex-start;
+        &:hover {
+          color: $primary-5;
+        }
+        svg {
+          border: 1px solid white;
+          padding: 1rem;
+          border-radius: 15px;
+        }
+        .song-info {
+          padding-left: 1rem;
+          width: 100%;
+          @include flex-between;
+        }
+      }
+    }
+  }
+}
+.music-player {
+  position: fixed;
+  overflow: hidden;
+  height: 0px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: $bg;
+  display: flex;
+  .media-controls {
+    width: 100%;
+    color: white;
+    @include flex-column;
+    .song-info {
+      margin-bottom: 1rem;
+    }
+    .progress {
+      cursor: pointer;
+      height: 10px;
+      width: 80%;
+      background: white;
+      .progress-bar {
+        background: $primary-5;
+        height: 10px;
+        width: 0%;
+        transition: width 0.1s linear;
+      }
+    }
+    .controls {
+      width: 80%;
+      margin: 1rem 0;
+      font-size: 2rem;
+      @include flex-center;
+      svg {
+        padding-left: 10px;
+        &:hover {
+          color: $primary-5;
+        }
+      }
+      .sound-bar {
+        cursor: pointer;
+        height: 10px;
+        width: 50%;
+        background: white;
+        .sound-volume {
+          background: $primary-5;
+          border-radius: 10px;
+          height: 100%;
+          width: 0%;
+          transition: width 0.1s linear;
+        }
+      }
+    }
+  }
+  .player-disable {
+    cursor: pointer;
+    position: absolute;
+    top: -48px;
+    right: 0px;
+    background: $bg;
+    padding: 1rem;
+    border: 1px solid $primary-5;
+    border-bottom: none;
+  }
+}

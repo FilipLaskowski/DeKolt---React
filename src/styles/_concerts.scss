@@ -6,7 +6,7 @@ Mobile
 .concerts {
   @include flex-column;
   .concerts-container {
-    width: 100%;
+    width: 90%;
     max-width: 1400px;
     @include flex-column;
     .empty-event {
@@ -14,7 +14,7 @@ Mobile
       padding-bottom: 2rem;
     }
     article {
-      width: 90%;
+      width: 100%;
       margin: 1rem 0;
       @include flex-start;
       .concert-time {
