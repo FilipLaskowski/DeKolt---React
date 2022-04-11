@@ -27,7 +27,7 @@ function Footer() {
           </a>
         </p>
         <p>
-          Zdjęcia w tle:
+          Zdjęcie w tle:
           <a href="https://www.facebook.com/blesso.mp" target="_blank">
             {" "}
             BlessoPL

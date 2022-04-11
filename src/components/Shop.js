@@ -1,10 +1,11 @@
 import React from "react";
 import shopLogo from "../img/DeKolt_shop_logo.png";
 import shopLayer from "../img/shop_layer.jpg";
+import {Link} from 'react-router-dom'
 
 function Shop() {
   return (
-    <section className="shop">
+    <section className="shop" id='shop'>
       <header className="section-header">
         <h1>Sklep</h1>
       </header>
@@ -22,9 +23,11 @@ function Shop() {
             Najnowsza płyta już dostępna. Różne wzory koszulek w przystępnej
             cenie
           </p>
-          <div className="more-button">
-            <div className="btn">Otwórz sklep</div>
-          </div>
+          <Link to='/shop'>
+            <div className="more-button">
+              <div className="btn">Otwórz sklep</div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

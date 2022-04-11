@@ -31,7 +31,12 @@ Mixins
   }
 }
 @mixin desktop {
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
+@mixin shop-modal-mix {
+  @media screen and (min-width: 550px) {
     @content;
   }
 }
@@ -89,7 +94,7 @@ Imports
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 @import "./styles/_preloader", "./styles/_primary", "./styles/nav",
   "./styles/concerts", "./styles/records", "./styles/gallery", "./styles/about",
-  "./styles/shop";
+  "./styles/shop", "./styles/footer";
 
 /*
 =============== 
@@ -136,7 +141,7 @@ main {
   font-size: 1.5rem;
   padding: 10px 20px;
   border: 2px solid white;
-  color: inherit;
+  color: white;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
@@ -171,40 +176,6 @@ main {
     text-transform: capitalize;
     @include desktop {
       font-size: 6rem;
-    }
-  }
-}
-
-footer {
-  margin-top: 50px;
-  background: $bg-shadow;
-  border-top: 2px solid $primary-5;
-  .footer-topside {
-    @include flex-center;
-    a {
-      color: white;
-      font-size: 3rem;
-      max-width: 200px;
-      padding: 1rem;
-      img {
-        width: 100%;
-      }
-    }
-  }
-  .footer-bottomside {
-    @include flex-center;
-    p {
-      font-family: "Special Elite", cursive;
-      text-align: center;
-      font-size: 1.2rem;
-      margin: 0 10px;
-      padding-bottom: 1rem;
-    }
-    a {
-      color: white;
-      &:hover {
-        color: $primary-5;
-      }
     }
   }
 }

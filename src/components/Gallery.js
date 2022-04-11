@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { galleries } from "../data/gallery";
+import { Link } from "react-router-dom";
 
 function Gallery() {
   const thumbnails = [
@@ -7,27 +8,29 @@ function Gallery() {
     galleries[galleries.length - 2],
   ];
   return (
-    <section className="gallery">
+    <section className="gallery" id="gallery">
       <header className="section-header">
         <h1>Galeria</h1>
       </header>
       <div className="gallery-container">
         {thumbnails.map((item) => {
-          const { id, name, date } = item;
+          const { id, name, date, link } = item;
           return (
-            <div key={id} className="gallery-shortcut">
+            <a key={id} href={`${link}`} className="gallery-shortcut">
               <img src={`img/gallery/${id}/1.jpg`} alt={name} />
               <div className="darker">
                 <h3>{name}</h3>
                 <h5>{date}</h5>
               </div>
-            </div>
+            </a>
           );
         })}
       </div>
-      <div className="more-button">
-        <div className="btn">Więcej zdjęć</div>
-      </div>
+      <Link to="/gallery">
+        <div className="more-button">
+          <div className="btn">Więcej zdjęć</div>
+        </div>
+      </Link>
     </section>
   );
 }

@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from "react";
-import concertsList from "../data/concertsList";
+import React, { useState, useEffect, useContext } from "react";
 import Events from "./Concerts/Events";
+import { DatabaseContext } from "../contexts/DatabseContext";
 
 function Concerts() {
+  const concerts = useContext(DatabaseContext);
   const [isEvent, setIsEvent] = useState(false);
   useEffect(() => {
-    if (concertsList.length > 0) {
+    if (concerts.length > 0) {
       setIsEvent(true);
-    } else if (concertsList.length === 0) {
+    } else if (concerts.length === 0) {
       setIsEvent(false);
     }
   }, []);
   return (
-    <section className="concerts">
+    <section className="concerts" id="concerts">
       <header className="section-header">
         <h1>koncerty</h1>
       </header>
       <div className="concerts-container">
         {isEvent ? (
-          <Events concertsList={concertsList} />
+          <Events concerts={concerts} />
         ) : (
           <h3 className="empty-event">Brak koncertów w najbliższym czasie.</h3>
         )}

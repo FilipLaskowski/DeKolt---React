@@ -4,7 +4,7 @@ import album2021 from "../data/album2021";
 
 function Records() {
   return (
-    <section className="albums">
+    <section className="albums" id='albums'>
       <header className="section-header">
         <h1>albumy</h1>
       </header>

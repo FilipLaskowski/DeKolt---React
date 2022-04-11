@@ -3,27 +3,27 @@ import { FaFacebook, FaYoutube } from "react-icons/fa";
 export const links = [
   {
     id: 1,
-    url: "/",
+    url: "/#concerts",
     text: "koncerty",
   },
   {
     id: 2,
-    url: "/",
+    url: "/#albums",
     content: "albumy",
   },
   {
     id: 3,
-    url: "/",
+    url: "/#gallery",
     content: "galeria",
   },
   {
     id: 4,
-    url: "/",
+    url: "/#about",
     content: "o zespole",
   },
   {
     id: 5,
-    url: "/",
+    url: "/#shop",
     content: "sklep",
   },
   {

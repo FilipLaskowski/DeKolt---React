@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import dekolt2021 from "../../Dekolt2021.png";
+import dekolt2021 from "../../Dekolt2021.jpg";
 import { FaPlay } from "react-icons/fa";
 import MusicPlayer from "../Records/MusicPlayer";
 

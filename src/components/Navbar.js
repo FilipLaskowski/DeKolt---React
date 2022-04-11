@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { FaBars, FaRegTimesCircle } from "react-icons/fa";
 import { links } from "../data/Navbarlinks";
 import logo from "../logo.png";
+import {Link} from 'react-router-dom'
 
 function Navbar() {
   const [showLinks, setShowLinks] = useState(false);
@@ -21,6 +22,9 @@ function Navbar() {
       setIsNavbarTop(true);
     }
   };
+  const closeNavbar = () =>{
+    setShowLinks(false);
+  }
   useEffect(() => {
     window.addEventListener("scroll", setScroll);
   }, []);
@@ -28,7 +32,9 @@ function Navbar() {
     <nav className={`${isNavbarTop ? "" : "navbar-black"}`}>
       <div className="nav-center">
         <div className="nav-header">
-          <img className="logo" src={logo} alt="DeKolt logo" />
+          <Link to='/'>
+            <img className="logo" src={logo} alt="DeKolt logo" />
+            </Link>
           <button className="nav-toggle" onClick={() => setShowLinks(true)}>
             <FaBars />
           </button>
@@ -41,8 +47,8 @@ function Navbar() {
             {links.map((link) => {
               const { id, url, content } = link;
               return (
-                <li key={id}>
-                  <a href={url}>{content}</a>
+                <li key={id} >
+                  <a href={url} onClick={closeNavbar}>{content}</a>
                 </li>
               );
             })}

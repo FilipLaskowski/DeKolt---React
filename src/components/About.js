@@ -1,9 +1,10 @@
 import React from "react";
 import bandPhoto from "../img/about_photo.jpg";
+import {Link} from 'react-router-dom'
 
 function About() {
   return (
-    <section className="about">
+    <section className="about" id='about'>
       <header className="section-header">
         <h1>O zespole</h1>
       </header>
@@ -21,9 +22,11 @@ function About() {
             Brzezinach Śl. obecnym domu pogrzebowym aby znów powrócić do piwnicy
             .
           </p>
+          <Link to='/about'>
           <div className="more-button">
             <div className="btn">Więcej...</div>
           </div>
+          </Link>
         </div>
       </div>
     </section>

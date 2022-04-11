@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { AiFillSound } from "react-icons/ai";
 import { GoMute } from "react-icons/go";
-import albumLogo from "../../Dekolt2021.png";
+import albumLogo from "../../Dekolt2021.jpg";
 
 function MusicPlayer({ songID }) {
   const [isPlaying, setIsPlaying] = useState(false);

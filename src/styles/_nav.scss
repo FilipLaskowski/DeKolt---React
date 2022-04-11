@@ -12,7 +12,7 @@ nav {
   background: $menu-bg-main;
   position: fixed;
   width: 100%;
-  z-index: 1000;
+  z-index: 900;
   .nav-center {
     .nav-header {
       @include flex-between;

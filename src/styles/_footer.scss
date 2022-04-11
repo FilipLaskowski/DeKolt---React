@@ -1,0 +1,36 @@
+footer {
+  z-index: 900;
+  background: $bg-shadow;
+  border-top: 2px solid $primary-5;
+  .footer-topside {
+    @include flex-center;
+    a {
+      color: white;
+      font-size: 3rem;
+      max-width: 200px;
+      padding: 1rem;
+      &:hover {
+        color: $primary-5;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .footer-bottomside {
+    @include flex-center;
+    p {
+      font-family: "Special Elite", cursive;
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 0 10px;
+      padding-bottom: 1rem;
+    }
+    a {
+      color: white;
+      &:hover {
+        color: $primary-5;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ Mobile
 ===============
 */
 .shop {
+  padding-bottom: 50px;
   @include flex-column;
   .shop-container {
     @include flex-column;
@@ -31,6 +32,122 @@ Mobile
         text-align: center;
       }
       @include flex-column;
+    }
+  }
+}
+
+.shop-page-container {
+  @include flex-center;
+  .shop-icons {
+    padding: 4rem;
+    max-width: 1200px;
+    padding-top: 100px;
+    .shop-product {
+      margin-bottom: 2rem;
+      &:hover {
+        cursor: pointer;
+      }
+      .shop-modal {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        @include flex-center;
+        .shop-modal-container {
+          position: relative;
+          margin-top: 70px;
+          width: 90%;
+          max-width: 1200px;
+          height: 85%;
+          background: rgba(0, 0, 0, 0.9);
+          z-index: 1000;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .modal-exit {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 2rem;
+            &:hover {
+              color: $primary-5;
+              cursor: pointer;
+            }
+          }
+          .shop-modal-img {
+            width: 80%;
+            padding: 4rem 2rem 0rem 2rem;
+            max-width: 400px;
+            img {
+              width: 100%;
+            }
+            .img-control {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              svg {
+                padding: 0.5rem;
+                background: $primary-5;
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+          .shop-modal-desc {
+            width: 90%;
+            padding: 1rem 2rem;
+            h3 {
+              font-size: 2rem;
+            }
+            h5 {
+              font-size: 1.5rem;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+      .shop-product-img {
+        img {
+          width: 100%;
+        }
+      }
+      .shop-product-info {
+        padding: 1rem 0.5rem;
+        font-size: 2rem;
+        @include flex-between;
+        background: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+}
+/*
+=============== 
+Desktop 
+===============
+*/
+
+@include desktop {
+  .shop-icons {
+    @include flex-between;
+    flex-wrap: wrap;
+    .shop-product {
+      width: 40%;
+      margin-bottom: 0;
+      .shop-product-img {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@include shop-modal-mix {
+  .shop-modal-container {
+    @include flex-center;
+    .shop-modal-img {
+      width: 50%;
     }
   }
 }

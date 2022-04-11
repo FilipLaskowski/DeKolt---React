@@ -55,6 +55,7 @@
   width: 100%;
   background: $bg;
   display: flex;
+  z-index: 1000;
   .media-controls {
     width: 100%;
     color: white;
