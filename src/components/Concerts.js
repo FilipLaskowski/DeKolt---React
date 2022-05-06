@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Events from "./Concerts/Events";
-import { DatabaseContext } from "../contexts/DatabseContext";
 
-function Concerts() {
-  const concerts = useContext(DatabaseContext);
+function Concerts({ concerts }) {
   const [isEvent, setIsEvent] = useState(false);
   useEffect(() => {
     if (concerts.length > 0) {

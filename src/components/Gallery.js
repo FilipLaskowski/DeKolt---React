@@ -1,32 +1,38 @@
-import React, { useState } from "react";
-import { galleries } from "../data/gallery";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useGallery } from "../contexts/GalleriesContext";
 
 function Gallery() {
-  const thumbnails = [
-    galleries[galleries.length - 1],
-    galleries[galleries.length - 2],
-  ];
+  const [thumbs, setThumbs] = useState([]);
+  const galleries = useGallery();
+  useEffect(() => {
+    setThumbs(galleries.slice(0, 2));
+  }, [galleries]);
   return (
     <section className="gallery" id="gallery">
       <header className="section-header">
         <h1>Galeria</h1>
       </header>
       <div className="gallery-container">
-        {thumbnails.map((item) => {
-          const { id, name, date, link } = item;
+        {thumbs.map((item) => {
+          const { id, title, date, img, link } = item;
           return (
-            <a key={id} href={`${link}`} className="gallery-shortcut">
-              <img src={`img/gallery/${id}/1.jpg`} alt={name} />
+            <a
+              key={id}
+              href={`${link}`}
+              className="gallery-shortcut"
+              target="_blank"
+            >
+              <img src={`${img}`} alt={title} />
               <div className="darker">
-                <h3>{name}</h3>
+                <h3>{title}</h3>
                 <h5>{date}</h5>
               </div>
             </a>
           );
         })}
       </div>
-      <Link to="/gallery">
+      <Link to="/galeria">
         <div className="more-button">
           <div className="btn">Więcej zdjęć</div>
         </div>

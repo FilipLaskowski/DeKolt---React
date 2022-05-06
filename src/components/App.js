@@ -4,31 +4,13 @@ import Preloader from "./Preloader";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Home from "./Pages/Home";
-import ShopPage from "./Pages/Shop/ShopPage";
 import GalleryPage from "./Pages/Gallery/GalleryPage";
 import AboutPage from "./Pages/AboutPage";
+import { GalleryProvider } from "../contexts/GalleriesContext";
 
-//database
-import { db } from "../Firebase-config";
-import { collection, getDocs } from "firebase/firestore";
-import { DatabaseContext } from "../contexts/DatabseContext";
+export const GalleryContext = React.createContext();
 
 function App() {
-  //Concerts Database
-  const [concerts, setConcerts] = useState([]);
-  const concertsCollectionRef = collection(db, "Concerts");
-  useEffect(() => {
-    const getConcerts = async () => {
-      const concertsData = await getDocs(concertsCollectionRef);
-      setConcerts(
-        concertsData.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }))
-      );
-    };
-    getConcerts();
-  }, []);
   //Preloader
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -37,6 +19,7 @@ function App() {
       setLoading(false);
     }, 800);
   }, []);
+
   return (
     <>
       {loading ? (
@@ -44,14 +27,13 @@ function App() {
       ) : (
         <Router>
           <Navbar />
-          <DatabaseContext.Provider value={concerts}>
-            <Switch>
+          <Switch>
+            <GalleryProvider>
               <Route path="/" exact component={Home} />
-              <Route path="/gallery" component={GalleryPage} />
-              <Route path="/about" component={AboutPage} />
-              <Route path="/shop" component={ShopPage} />
-            </Switch>
-          </DatabaseContext.Provider>
+              <Route path="/galeria" component={GalleryPage} />
+            </GalleryProvider>
+            <Route path="/about" component={AboutPage} />
+          </Switch>
           <Footer />
         </Router>
       )}
